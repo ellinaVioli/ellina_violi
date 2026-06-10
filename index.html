@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>ellina_violi | Скрипка & DJ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{background:var(--bg-body);font-family:'Nunito',sans-serif;color:var(--text-color);scroll-behavior:smooth;transition:background .3s,color .3s}
+        :root{--bg-body:#fefefe;--card-bg:#fff;--accent-primary:#2c5f8a;--accent-secondary:#b0c4de;--accent-gold:#d4af37;--badge-bg:#e9f0f5;--badge-text:#2c5f8a;--hero-highlight:#eaf4ff;--btn-gradient-start:#2c5f8a;--btn-gradient-end:#5f8db0;--stat-gradient:#2c5f8a;--shadow-card:0 20px 35px -12px rgba(0,0,0,0.06);--border-light:#e2e8f0;--text-color:#1e3a5f}
+        body.format-romantic{--bg-body:#fff8fb;--card-bg:#fff;--accent-primary:#c38eae;--accent-secondary:#f8e0f0;--accent-gold:#e6a8d7;--badge-bg:#fef0f7;--badge-text:#b56792;--hero-highlight:#ffeef5;--btn-gradient-start:#d47aae;--btn-gradient-end:#b56792;--stat-gradient:#c38eae;--text-color:#5a3e4e}
+        body.format-free{--bg-body:#f5fcfb;--card-bg:#fff;--accent-primary:#48c9b0;--accent-secondary:#f3d9e8;--accent-gold:#f7a77a;--badge-bg:#e6f6f3;--badge-text:#2c8b77;--hero-highlight:#e6f9f5;--btn-gradient-start:#48c9b0;--btn-gradient-end:#f7a77a;--stat-gradient:#48c9b0;--text-color:#2c6e5e}
+        .container{max-width:1300px;margin:0 auto;padding:0 28px}
+        .scroll-to-top{position:fixed;bottom:30px;right:30px;background:var(--accent-primary);color:#fff;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:.3s;z-index:1000;opacity:0;visibility:hidden;border:none}
+        .scroll-to-top.show{opacity:1;visibility:visible}
+        .scroll-to-top:hover{transform:translateY(-5px);background:var(--btn-gradient-end)}
+        .lang-switch{display:flex;gap:12px;background:#fff;padding:6px 16px;border-radius:60px;box-shadow:0 2px 12px rgba(0,0,0,0.03)}
+        .lang-btn{background:0 0;border:none;font-weight:600;cursor:pointer;padding:6px 14px;border-radius:40px;transition:.2s;font-size:.85rem;color:#5c6f87;font-family:'Nunito',sans-serif}
+        .lang-btn.active{background:var(--accent-primary);color:#fff}
+        .navbar{padding:20px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;border-bottom:1px solid rgba(0,0,0,0.05);background:rgba(255,255,250,0.92);backdrop-filter:blur(12px);position:sticky;top:0;z-index:99}
+        .logo{font-size:1.8rem;font-weight:800;background:linear-gradient(125deg,var(--accent-primary),var(--accent-gold));-webkit-background-clip:text;background-clip:text;color:transparent;font-family:'Nunito',sans-serif;letter-spacing:-.5px}
+        .nav-links{display:flex;gap:32px;align-items:center;flex-wrap:wrap}
+        .nav-links a{color:var(--text-color);text-decoration:none;font-weight:700;transition:.2s}
+        .nav-links a:hover{color:var(--accent-primary)}
+        .tg-link{background:var(--accent-primary);color:#fff!important;padding:6px 16px;border-radius:60px;font-size:.9rem;display:inline-flex;align-items:center;gap:6px}
+        .format-switch{display:flex;justify-content:center;gap:20px;margin:40px 0 20px;flex-wrap:wrap}
+        .format-btn{background:var(--card-bg);border:2px solid var(--accent-secondary);padding:12px 28px;border-radius:60px;font-weight:800;cursor:pointer;transition:.2s;font-family:'Nunito',sans-serif;color:var(--accent-primary)}
+        .format-btn.active{background:var(--accent-primary);border-color:var(--accent-primary);color:#fff;box-shadow:0 6px 14px rgba(0,0,0,0.1)}
+        .hero{padding:40px 0 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:40px}
+        .hero-content{flex:1.2}
+        .hero-badge{display:inline-flex;background:var(--badge-bg);padding:8px 20px;border-radius:60px;color:var(--badge-text);font-weight:700;margin-bottom:24px}
+        .hero-content h1{font-size:3rem;font-weight:800;font-family:'Playfair Display',serif;color:var(--text-color)}
+        .hero-highlight{background:var(--hero-highlight);display:inline-block;padding:0 10px;border-radius:40px}
+        .hero-desc{font-size:1.15rem;margin:28px 0 20px;font-weight:500;line-height:1.5}
+        .hero-desc p{margin-bottom:12px}
+        .btn{display:inline-block;background:linear-gradient(100deg,var(--btn-gradient-start),var(--btn-gradient-end));border:none;padding:12px 32px;border-radius:60px;font-weight:700;color:#fff;text-decoration:none;margin-right:16px;cursor:pointer;transition:.2s}
+        .btn-outline{background:0 0;border:1.5px solid var(--accent-primary);color:var(--accent-primary)}
+        .btn-outline:hover{background:var(--accent-primary);color:#fff}
+        .stats{flex:0.8;background:rgba(255,255,250,0.7);backdrop-filter:blur(6px);border-radius:48px;padding:28px;border:1px solid var(--border-light)}
+        .stat-number{font-size:2rem;font-weight:800;background:linear-gradient(135deg,var(--stat-gradient),var(--accent-gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+        .stat-item{margin-bottom:12px}
+        .stat-photo{width:100%;border-radius:28px;margin-bottom:24px;object-fit:cover}
+        .countries{display:flex;flex-wrap:wrap;gap:18px;margin:20px 0}
+        .country-item{background:var(--badge-bg);padding:6px 18px;border-radius:60px;font-weight:600;font-size:.9rem}
+        .section-title{font-size:2rem;font-weight:800;text-align:center;margin:60px 0 40px;color:var(--accent-primary)}
+        .carousel-block{margin-bottom:60px;position:relative}
+        .carousel-block .swiper-slide{width:300px;height:auto}
+        .service-card, .repertoire-card, .review-card{background:var(--card-bg);border-radius:32px;padding:30px 20px;box-shadow:var(--shadow-card);border:1px solid var(--border-light);text-align:center;height:100%;display:flex;flex-direction:column;justify-content:space-between}
+        .review-photo{width:80px;height:80px;border-radius:50%;margin:0 auto 15px;background:#e2e8f0;object-fit:cover}
+        .service-card h3, .repertoire-card h3, .review-card h3{font-size:1.5rem;margin-bottom:15px;color:var(--accent-primary)}
+        .placeholder-text{color:#8e9aaf;font-style:italic;padding:10px 0}
+        .swiper-button-next, .swiper-button-prev{color:var(--accent-primary);background:rgba(255,255,255,0.7);width:40px;height:40px;border-radius:50%;backdrop-filter:blur(4px)}
+        .swiper-button-next:after, .swiper-button-prev:after{font-size:20px}
+        .swiper-pagination-bullet-active{background:var(--accent-primary)}
+        .main-videos{padding:60px 0 30px}
+        .video-grid-main{display:flex;flex-wrap:wrap;gap:40px;justify-content:center}
+        .video-card{background:var(--card-bg);border-radius:38px;padding:24px;box-shadow:var(--shadow-card);flex:1;min-width:280px;border:1px solid var(--border-light)}
+        .video-card h3{font-size:1.5rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:12px;color:var(--accent-primary)}
+        .video-wrapper{border-radius:28px;overflow:hidden}
+        .horizontal-video,.vertical-video{width:100%;display:block}
+        .horizontal-video{aspect-ratio:16/9;object-fit:cover}
+        .vertical-container{max-width:360px;margin:0 auto;aspect-ratio:9/16;border-radius:32px;overflow:hidden}
+        .vertical-video{width:100%;height:100%;object-fit:cover}
+        .carousel-section{padding:60px 0;background:var(--card-bg);border-radius:64px;margin:30px 0}
+        .swiper-video{width:100%;padding:20px 0 50px}
+        .swiper-video .swiper-slide{background:var(--card-bg);border-radius:36px;overflow:hidden;box-shadow:var(--shadow-card);cursor:pointer;border:1px solid var(--border-light)}
+        .swiper-video .swiper-slide video{width:100%;aspect-ratio:16/9;object-fit:cover;pointer-events:none}
+        .slide-caption{padding:14px;text-align:center;font-weight:600}
+        .about-section{padding:40px 0 60px}
+        .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+        .icon-text{display:inline-flex;align-items:center;gap:8px;background:var(--badge-bg);padding:8px 16px;border-radius:40px;margin-right:12px;margin-top:10px}
+        .form-card{background:var(--card-bg);border-radius:48px;padding:44px;box-shadow:var(--shadow-card);margin:40px 0;border:1px solid var(--border-light)}
+        .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+        .full-width{grid-column:span 2}
+        input,select,textarea{background:#fefaff;border:1px solid var(--border-light);padding:14px 20px;border-radius:48px;font-family:'Nunito',sans-serif;width:100%}
+        .radio-group,.checkbox-group{display:flex;gap:24px;margin-top:10px;flex-wrap:wrap}
+        .submit-btn{background:linear-gradient(95deg,var(--btn-gradient-start),var(--btn-gradient-end));width:100%;padding:16px;border-radius:80px;font-weight:800;color:#fff;border:none;margin-top:24px;cursor:pointer}
+        footer{background:var(--badge-bg);border-radius:48px 48px 0 0;padding:48px 0 28px;text-align:center}
+        .social-icons a{font-size:2rem;margin:0 16px;color:var(--accent-primary);transition:.2s}
+        .modal-video{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:1000;justify-content:center;align-items:center}
+        .modal-content{position:relative;width:90%;max-width:1000px;background:#000;border-radius:32px}
+        .modal-content video{width:100%;border-radius:32px}
+        .close-modal{position:absolute;top:-40px;right:0;font-size:2rem;color:#fff;background:0 0;border:none;cursor:pointer}
+        @media (max-width:780px){.about-grid,.form-grid{grid-template-columns:1fr}.full-width{grid-column:span 1}.hero-content h1{font-size:2.2rem}.btn{margin-bottom:12px}.scroll-to-top{bottom:20px;right:20px;width:40px;height:40px;font-size:18px}.carousel-block .swiper-slide{width:260px}}
+        .button-group{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+    </style>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar">
+        <div class="logo">ellina_violi</div>
+        <div class="nav-links">
+            <a href="#about" data-lang="nav_about">Обо мне</a>
+            <a href="#services" data-lang="nav_services">Услуги</a>
+            <a href="#repertoire" data-lang="nav_repertoire">Репертуар</a>
+            <a href="#reviews" data-lang="nav_reviews">Отзывы</a>
+            <a href="#video-section" data-lang="nav_video">Видео</a>
+            <a href="#form" data-lang="nav_form">Анкета</a>
+            <a href="https://t.me/ellina_violi" target="_blank" class="tg-link"><i class="fab fa-telegram"></i> <span data-lang="nav_tg">Напиши мне</span></a>
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="ru">RU</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+        </div>
+    </nav>
+    <div class="hero">
+        <div class="hero-content">
+            <div class="hero-badge"><i class="fas fa-star-of-life"></i> <span data-lang="hero_badge">скрипка + диджей | live set</span></div>
+            <h1><span data-lang="hero_title">ellina_violi</span><br><span class="hero-highlight" data-lang="hero_sub">скрипка и dj-сет</span></h1>
+            <div class="hero-desc">
+                <p data-lang="desc1">🎻 Профессиональная скрипачка с 5+ лет опыта выступлений на лучших мировых площадках.</p>
+                <p data-lang="desc2">🎧 Создаю уникальную атмосферу: от скрипка лаундж и сансет до свободного диджей-сета с живой скрипкой.</p>
+                <p data-lang="desc3">✨ Индивидуальный подход к каждому мероприятию: свадьбы, корпоративы, дивишники.</p>
+                <p data-lang="geo_info" style="margin-top:12px;">📍 Принимаю заказы в Самаре, по России — по договорённости.</p>
+            </div>
+            <div class="countries">
+                <div class="country-item"><span data-lang="country_india">🇮🇳 Индия</span></div>
+                <div class="country-item"><span data-lang="country_turkey">🇹🇷 Турция</span></div>
+                <div class="country-item"><span data-lang="country_china">🇨🇳 Китай</span></div>
+                <div class="country-item"><span data-lang="country_saudi">🇸🇦 Саудовская Аравия</span></div>
+                <div class="country-item"><span data-lang="country_russia">🇷🇺 Россия</span></div>
+                <div class="country-item"><span data-lang="country_kazakh">🇰🇿 Казахстан</span></div>
+            </div>
+            <div class="button-group" id="heroButtons">
+                <a href="#form" class="btn" id="bookEventBtn">📋 Забронировать</a>
+                <a href="#contractFormCard" class="btn btn-outline" id="contractBtn" style="display:none;">📄 Contract</a>
+                <a href="#carousel" class="btn btn-outline" id="watchVideoBtn">🎬 Смотреть видео</a>
+            </div>
+        </div>
+        <div class="stats">
+            <img class="stat-photo" src="https://via.placeholder.com/400x300/2c5f8a/ffffff?text=ellina_violi+photo" alt="ellina_violi фото">
+            <div class="stat-item"><span class="stat-number">50+</span> <span data-lang="stat_weddings">свадеб</span></div>
+            <div class="stat-item"><span class="stat-number">20+</span> <span data-lang="stat_rest">ресторанов</span></div>
+            <div class="stat-item"><span class="stat-number">5*</span> <span data-lang="stat_hotels">отели</span></div>
+        </div>
+    </div>
+    <div class="format-switch">
+        <button class="format-btn active" data-format="business" data-lang="format_business">🏢 Деловой формат (скрипка лаундж и сансет)</button>
+        <button class="format-btn" data-format="romantic" data-lang="format_romantic">🌸 Романтик (скрипка, лирика)</button>
+        <button class="format-btn" data-format="free" data-lang="format_free">🎧 Свободный (DJ + скрипка)</button>
+    </div>
+</div>
+
+<div class="container carousel-block" id="services">
+    <h2 class="section-title" data-lang="services_title">📦 Пакеты услуг</h2>
+    <div class="swiper servicesSwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><div class="service-card"><h3 data-lang="service1_title">Базовый</h3><p data-lang="service1_desc">Скрипка соло — 60 минут</p><p class="placeholder-text" data-lang="service1_placeholder">*будет заполнено позже</p></div></div>
+            <div class="swiper-slide"><div class="service-card"><h3 data-lang="service2_title">Расширенный</h3><p data-lang="service2_desc">DJ + скрипка, 2 часа</p><p class="placeholder-text" data-lang="service2_placeholder">*будет заполнено позже</p></div></div>
+            <div class="swiper-slide"><div class="service-card"><h3 data-lang="service3_title">VIP</h3><p data-lang="service3_desc">Индивидуальный сет, полное сопровождение</p><p class="placeholder-text" data-lang="service3_placeholder">*будет заполнено позже</p></div></div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+<div class="container carousel-block" id="repertoire">
+    <h2 class="section-title" data-lang="repertoire_title">🎵 Репертуар</h2>
+    <div class="swiper repertoireSwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><div class="repertoire-card"><h3 data-lang="repertoire_classic">Классика</h3><p class="placeholder-text" data-lang="repertoire_classic_placeholder">Список произведений появится позже</p></div></div>
+            <div class="swiper-slide"><div class="repertoire-card"><h3 data-lang="repertoire_pop">Поп / Рок</h3><p class="placeholder-text" data-lang="repertoire_pop_placeholder">Современные хиты в обработке</p></div></div>
+            <div class="swiper-slide"><div class="repertoire-card"><h3 data-lang="repertoire_electro">Электроника / Lounge</h3><p class="placeholder-text" data-lang="repertoire_electro_placeholder">Авторские миксы и ремиксы</p></div></div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+<div class="container carousel-block" id="reviews">
+    <h2 class="section-title" data-lang="reviews_title">💬 Отзывы и фото клиентов</h2>
+    <div class="swiper reviewsSwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><div class="review-card"><div class="review-photo" style="background:#e2e8f0;"></div><h3 data-lang="review1_name">Анна и Дмитрий</h3><p class="placeholder-text" data-lang="review1_text">«Потрясающая атмосфера, спасибо за прекрасный вечер! Фото и видео добавлю позже.»</p></div></div>
+            <div class="swiper-slide"><div class="review-card"><div class="review-photo" style="background:#e2e8f0;"></div><h3 data-lang="review2_name">Иван, корпоратив</h3><p class="placeholder-text" data-lang="review2_text">«Профессионал своего дела, все гости в восторге. Фотоотчёт будет позже.»</p></div></div>
+            <div class="swiper-slide"><div class="review-card"><div class="review-photo" style="background:#e2e8f0;"></div><h3 data-lang="review3_name">Елена, свадьба</h3><p class="placeholder-text" data-lang="review3_text">«Скрипка + диджей — это нечто невероятное! Спасибо за магию. Фотографии добавлю.»</p></div></div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+<div class="container" id="video-section">
+    <div class="main-videos">
+        <div style="text-align:center;margin-bottom:40px"><h2 style="font-size:2rem;font-weight:800;color:var(--accent-primary)" data-lang="main_video_title">Видеопрезентация</h2></div>
+        <div class="video-grid-main">
+            <div class="video-card"><h3><i class="fas fa-tv"></i> <span data-lang="hor_title">Горизонтальный ролик</span></h3><div class="video-wrapper"><video id="mainHorizontal" class="horizontal-video" controls poster="https://placehold.co/1280x720/FFFFFF/2c5f8a?text=Видео"><source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4"></video></div><div class="video-caption" id="horCaption">🎻 Выступление на премиум-мероприятии</div></div>
+            <div class="video-card"><h3><i class="fas fa-mobile-alt"></i> <span data-lang="vert_title">Вертикальный ролик</span></h3><div class="vertical-container"><video id="mainVertical" class="vertical-video" controls poster="https://placehold.co/1080x1920/FFFFFF/2c5f8a?text=Видео"><source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4"></video></div><div class="video-caption" id="vertCaption">📱 Короткий формат для соцсетей</div></div>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="carousel">
+    <div class="carousel-section">
+        <div style="text-align:center;margin-bottom:20px"><h2 style="font-size:2rem;font-weight:800;color:var(--accent-primary)" data-lang="carousel_title">Больше видео</h2><p data-lang="carousel_sub">Нажмите на видео, чтобы открыть в полный размер</p></div>
+        <div class="swiper swiper-video" id="videoSwiper"><div class="swiper-wrapper" id="carouselWrapper"></div><div class="swiper-pagination"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
+    </div>
+</div>
+
+<div class="container" id="about">
+    <div class="about-section">
+        <div class="about-grid">
+            <div class="about-text"><h2 style="font-size:2rem;font-family:'Playfair Display';color:var(--accent-primary)" data-lang="about_title">ellina_violi</h2><p data-lang="about_p1">Скрипачка и диджей в одном лице. 5+ лет выступаю в лучших ресторанах и отелях 5 звезд. Соединяю классическую скрипку с современными битами.</p><p data-lang="about_p2">Играла в Индии, Турции, Китае, Саудовской Аравии, России, Казахстане. Индивидуальный сет под ваш стиль и формат мероприятия.</p><div><span class="icon-text"><i class="fas fa-utensils"></i> 20+ ресторанов</span><span class="icon-text"><i class="fas fa-hotel"></i> Отели 5*</span><span class="icon-text"><i class="fas fa-ring"></i> 50+ свадеб</span></div><div class="social-icons" style="margin-top:30px"><a href="https://vk.com/viellina_fea" target="_blank"><i class="fab fa-vk"></i></a><a href="https://youtube.com/@ellinafea_?si=Aby7JpCjvbQEyPZv" target="_blank"><i class="fab fa-youtube"></i></a><a href="https://www.instagram.com/ellinafea" target="_blank" id="instaLink"><i class="fab fa-instagram"></i></a></div></div>
+            <div style="background:var(--badge-bg);border-radius:48px;padding:32px;text-align:center"><i class="fas fa-violin" style="font-size:4rem;color:var(--accent-primary)"></i> <i class="fas fa-headphones" style="font-size:3.5rem;margin:0 12px;color:var(--accent-gold)"></i><h3 data-lang="solo_title">Соло-программа или с DJ</h3><p data-lang="solo_desc">Работаю одна — управляю скрипкой и дж-пультом, либо только живая скрипка.</p></div>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="form">
+    <div class="form-card" id="mainFormCard"><h2 style="font-size:2rem;font-weight:800;text-align:center;color:var(--accent-primary)" data-lang="form_title">📝 Анкета клиента</h2>
+        <form id="clientForm"><div class="form-grid"><div class="input-group"><label data-lang="label_name">Ваше имя *</label><input type="text" id="name" required></div><div class="input-group"><label data-lang="label_email">Email *</label><input type="email" id="email" required></div><div class="input-group"><label data-lang="label_phone">Телефон *</label><input type="tel" id="phone" required></div><div class="input-group"><label data-lang="label_event">Тип мероприятия</label><select id="eventType"><option value="wedding" data-lang="opt_wedding">💍 Свадьба</option><option value="corporate" data-lang="opt_corporate">🏢 Корпоратив</option><option value="private" data-lang="opt_private">✨ Частная вечеринка</option></select></div><div class="input-group full-width"><label data-lang="label_format">Выберите формат музыки</label><div class="radio-group" id="formatRadios"><label><input type="radio" name="formatRadio" value="business"> <span data-lang="radio_business">Деловой (скрипка лаундж и сансет)</span></label><label><input type="radio" name="formatRadio" value="romantic"> <span data-lang="radio_romantic">Романтик (скрипка, лирика)</span></label><label><input type="radio" name="formatRadio" value="free"> <span data-lang="radio_free">Свободный (DJ + скрипка)</span></label></div></div><div class="input-group full-width"><label data-lang="label_speakers">Нужны ли колонки?</label><div class="checkbox-group"><label><input type="checkbox" id="needSpeakers"> <span data-lang="checkbox_speakers">Да, необходима звуковая аппаратура</span></label></div></div><div class="input-group full-width"><label data-lang="label_message">Пожелания / локация / детали</label><textarea id="message" rows="3"></textarea></div></div><button type="submit" class="submit-btn" data-lang="btn_send">✉️ Отправить заявку</button><div id="formFeedback" style="margin-top:18px;text-align:center"></div></form>
+    </div>
+    <div class="form-card" id="contractFormCard" style="display:none"><h2 style="font-size:2rem;font-weight:800;text-align:center;color:var(--accent-primary)">📄 Contract up to 1 month</h2>
+        <form id="contractForm"><div class="form-grid"><div class="input-group"><label>Company *</label><input type="text" id="contractCompany" required></div><div class="input-group"><label>Period (dates) *</label><input type="text" id="contractPeriod" placeholder="e.g., 10 June - 10 July" required></div><div class="input-group"><label>Price (budget) *</label><input type="text" id="contractPrice" required></div><div class="input-group"><label>Country *</label><input type="text" id="contractCountry" required></div><div class="input-group full-width"><label>Accommodation conditions</label><textarea id="contractAccommodation" rows="2" placeholder="Describe accommodation terms..."></textarea></div><div class="input-group full-width"><label>Contact details for communication *</label><input type="text" id="contractContact" required placeholder="Phone / Telegram / Email"></div><div class="input-group full-width"><label>Link to hotel / restaurant / venue</label><input type="url" id="contractLink" placeholder="https://..."></div><div class="input-group full-width"><label>Google Drive folder with business cards (optional)</label><input type="text" disabled value="Not available yet — will be added later" style="background:#f0f0f0"><small style="color:gray">* A Google folder will be provided for additional documents.</small></div></div><button type="submit" class="submit-btn">📩 Send contract request</button><div id="contractFeedback" style="margin-top:18px;text-align:center"></div></form>
+    </div>
+</div>
+<footer><div class="container"><div class="social-icons"><a href="https://vk.com/viellina_fea" target="_blank"><i class="fab fa-vk"></i></a><a href="https://youtube.com/@ellinafea_?si=Aby7JpCjvbQEyPZv" target="_blank"><i class="fab fa-youtube"></i></a><a href="https://www.instagram.com/ellinafea" target="_blank" id="footerInsta"><i class="fab fa-instagram"></i></a></div><p data-lang="footer_text">© ellina_violi — скрипка и dj-сет для любых мероприятий. <a href="https://t.me/ellina_violi" target="_blank" style="color:var(--accent-primary)">@ellina_violi</a></p></div></footer>
+<div id="videoModal" class="modal-video"><div class="modal-content"><button class="close-modal">&times;</button><video id="modalVideo" controls autoplay></video></div></div>
+<button class="scroll-to-top" id="scrollToTopBtn" aria-label="Наверх"><i class="fas fa-arrow-up"></i></button>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+const formatData={
+    business:{className:'',videos:{hor:{src:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",caption:"🎻 Violin lounge & sunset set"},vert:{src:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFunflies.mp4",caption:"📱 Lounge sunset vibe"}},carousel:[{src:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",caption:"Business dinner, violin lounge"},{src:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFunflies.mp4",caption:"Sunset set"},{src:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",caption:"VIP event"}]},
+    romantic:{className:'format-romantic',videos:{hor:{src:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",caption:"🌸 Romantic violin at wedding"},vert:{src:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",caption:"📱 Violin, sunset & love"}},carousel:[{src:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",caption:"Wedding ceremony"},{src:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",caption:"Romantic evening"},{src:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",caption:"Lyrical program"}]},
+    free:{className:'format-free',videos:{hor:{src:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFunflies.mp4",caption:"🎧 DJ + violin, free mix"},vert:{src:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",caption:"📱 Dancefloor energy"}},carousel:[{src:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFunflies.mp4",caption:"Afterparty"},{src:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",caption:"Free format"},{src:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",caption:"Club set"}]}
+};
+let currentFormat='business',swiperInstance=null;
+function updateFormat(k){
+    currentFormat=k;
+    const d=formatData[k];
+    document.body.className=d.className||'';
+    const hv=document.getElementById('mainHorizontal'),vv=document.getElementById('mainVertical');
+    hv.querySelector('source').src=d.videos.hor.src;hv.load();
+    document.getElementById('horCaption').innerText=d.videos.hor.caption;
+    vv.querySelector('source').src=d.videos.vert.src;vv.load();
+    document.getElementById('vertCaption').innerText=d.videos.vert.caption;
+    const w=document.getElementById('carouselWrapper');w.innerHTML='';
+    d.carousel.forEach(i=>{let s=document.createElement('div');s.className='swiper-slide';s.setAttribute('data-video-src',i.src);s.innerHTML=`<video poster="https://placehold.co/640x360/FFFFFF/2c5f8a?text=Video"><source src="${i.src}" type="video/mp4"></video><div class="slide-caption">${i.caption}</div>`;w.appendChild(s);});
+    if(swiperInstance)swiperInstance.destroy(true,true);
+    swiperInstance=new Swiper('#videoSwiper',{loop:true,spaceBetween:30,slidesPerView:1,breakpoints:{768:{slidesPerView:2},1024:{slidesPerView:3}},pagination:{el:'.swiper-pagination',clickable:true},navigation:{nextEl:'.swiper-button-next',prevEl:'.swiper-button-prev'}});
+    document.querySelectorAll('input[name="formatRadio"]').forEach(r=>{if(r.value===k)r.checked=true;});
+}
+document.querySelectorAll('.format-btn').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.format-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');updateFormat(btn.getAttribute('data-format'));}));
+document.querySelectorAll('input[name="formatRadio"]').forEach(r=>r.addEventListener('change',e=>{if(e.target.checked)document.querySelector(`.format-btn[data-format="${e.target.value}"]`).click();}));
+const modal=document.getElementById('videoModal'),modalVideo=document.getElementById('modalVideo'),closeModal=document.querySelector('.close-modal');
+document.addEventListener('click',e=>{let s=e.target.closest('.swiper-slide');if(s&&s.getAttribute('data-video-src')){modalVideo.src=s.getAttribute('data-video-src');modal.style.display='flex';modalVideo.play().catch(()=>{});}});
+closeModal.addEventListener('click',()=>{modalVideo.pause();modalVideo.src='';modal.style.display='none';});
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal.click();});
+
+let servicesSwiper, repertoireSwiper, reviewsSwiper;
+function initCarousels(){
+    if(servicesSwiper) servicesSwiper.destroy(true,true);
+    if(repertoireSwiper) repertoireSwiper.destroy(true,true);
+    if(reviewsSwiper) reviewsSwiper.destroy(true,true);
+    servicesSwiper = new Swiper('.servicesSwiper', {slidesPerView:'auto',spaceBetween:24,navigation:{nextEl:'.servicesSwiper .swiper-button-next',prevEl:'.servicesSwiper .swiper-button-prev'},pagination:{el:'.servicesSwiper .swiper-pagination',clickable:true},breakpoints:{320:{slidesPerView:1,spaceBetween:20},640:{slidesPerView:2},1024:{slidesPerView:3}}});
+    repertoireSwiper = new Swiper('.repertoireSwiper', {slidesPerView:'auto',spaceBetween:24,navigation:{nextEl:'.repertoireSwiper .swiper-button-next',prevEl:'.repertoireSwiper .swiper-button-prev'},pagination:{el:'.repertoireSwiper .swiper-pagination',clickable:true},breakpoints:{320:{slidesPerView:1,spaceBetween:20},640:{slidesPerView:2},1024:{slidesPerView:3}}});
+    reviewsSwiper = new Swiper('.reviewsSwiper', {slidesPerView:'auto',spaceBetween:24,navigation:{nextEl:'.reviewsSwiper .swiper-button-next',prevEl:'.reviewsSwiper .swiper-button-prev'},pagination:{el:'.reviewsSwiper .swiper-pagination',clickable:true},breakpoints:{320:{slidesPerView:1,spaceBetween:20},640:{slidesPerView:2},1024:{slidesPerView:3}}});
+}
+const translations={
+    ru:{nav_about:"Обо мне",nav_services:"Услуги",nav_repertoire:"Репертуар",nav_reviews:"Отзывы",nav_video:"Видео",nav_form:"Анкета",nav_tg:"Напиши мне",hero_badge:"скрипка + диджей | live set",hero_title:"ellina_violi",hero_sub:"скрипка и dj-сет",desc1:"🎻 Профессиональная скрипачка с 5+ лет опыта выступлений на лучших мировых площадках.",desc2:"🎧 Создаю уникальную атмосферу: от скрипка лаундж и сансет до свободного диджей-сета с живой скрипкой.",desc3:"✨ Индивидуальный подход к каждому мероприятию: свадьбы, корпоративы, дивишники.",geo_info:"📍 Принимаю заказы в Самаре, по России — по договорённости.",stat_weddings:"свадеб",stat_rest:"ресторанов",stat_hotels:"отели",main_video_title:"Видеопрезентация",hor_title:"Горизонтальный ролик",vert_title:"Вертикальный ролик",carousel_title:"Больше видео",carousel_sub:"Нажмите на видео, чтобы открыть в полный размер",about_title:"ellina_violi",about_p1:"Скрипачка и диджей в одном лице. 5+ лет выступаю в лучших ресторанах и отелях 5 звезд. Соединяю классическую скрипку с современными битами.",about_p2:"Играла в Индии, Турции, Китае, Саудовской Аравии, России, Казахстане. Индивидуальный сет под ваш стиль и формат мероприятия.",solo_title:"Соло-программа или с DJ",solo_desc:"Работаю одна — управляю скрипкой и дж-пультом, либо только живая скрипка.",form_title:"📝 Анкета клиента",label_name:"Ваше имя *",label_email:"Email *",label_phone:"Телефон *",label_event:"Тип мероприятия",opt_wedding:"💍 Свадьба",opt_corporate:"🏢 Корпоратив",opt_private:"✨ Частная вечеринка",label_format:"Выберите формат музыки",radio_business:"Деловой (скрипка лаундж и сансет)",radio_romantic:"Романтик (скрипка, лирика)",radio_free:"Свободный (DJ + скрипка)",label_speakers:"Нужны ли колонки?",checkbox_speakers:"Да, необходима звуковая аппаратура",label_message:"Пожелания / локация / детали",btn_send:"✉️ Отправить заявку",footer_text:"© ellina_violi — скрипка и dj-сет для любых мероприятий.",format_business:"🏢 Деловой формат (скрипка лаундж и сансет)",format_romantic:"🌸 Романтик (скрипка, лирика)",format_free:"🎧 Свободный (DJ + скрипка)",country_india:"🇮🇳 Индия",country_turkey:"🇹🇷 Турция",country_china:"🇨🇳 Китай",country_saudi:"🇸🇦 Саудовская Аравия",country_russia:"🇷🇺 Россия",country_kazakh:"🇰🇿 Казахстан",
+        services_title:"📦 Пакеты услуг",service1_title:"Базовый",service1_desc:"Скрипка соло — 60 минут",service1_placeholder:"*будет заполнено позже",service2_title:"Расширенный",service2_desc:"DJ + скрипка, 2 часа",service2_placeholder:"*будет заполнено позже",service3_title:"VIP",service3_desc:"Индивидуальный сет, полное сопровождение",service3_placeholder:"*будет заполнено позже",
+        repertoire_title:"🎵 Репертуар",repertoire_classic:"Классика",repertoire_classic_placeholder:"Список произведений появится позже",repertoire_pop:"Поп / Рок",repertoire_pop_placeholder:"Современные хиты в обработке",repertoire_electro:"Электроника / Lounge",repertoire_electro_placeholder:"Авторские миксы и ремиксы",
+        reviews_title:"💬 Отзывы и фото клиентов",review1_name:"Анна и Дмитрий",review1_text:"«Потрясающая атмосфера, спасибо за прекрасный вечер! Фото и видео добавлю позже.»",review2_name:"Иван, корпоратив",review2_text:"«Профессионал своего дела, все гости в восторге. Фотоотчёт будет позже.»",review3_name:"Елена, свадьба",review3_text:"«Скрипка + диджей — это нечто невероятное! Спасибо за магию. Фотографии добавлю.»"},
+    en:{nav_about:"About",nav_services:"Services",nav_repertoire:"Repertoire",nav_reviews:"Reviews",nav_video:"Video",nav_form:"Form",nav_tg:"Write to me",hero_badge:"violin + DJ | live set",hero_title:"ellina_violi",hero_sub:"violin & DJ set",desc1:"🎻 Professional violinist with 5+ years of performing experience at top venues worldwide.",desc2:"🎧 I create a unique atmosphere: from violin lounge & sunset to free DJ set with live violin.",desc3:"✨ Individual approach to every event: weddings, corporate parties, bachelorette parties.",geo_info:"",stat_weddings:"weddings",stat_rest:"restaurants",stat_hotels:"5* hotels",main_video_title:"Video presentation",hor_title:"Horizontal video",vert_title:"Vertical video",carousel_title:"More videos",carousel_sub:"Click video to open fullscreen",about_title:"ellina_violi",about_p1:"Violinist & DJ rolled into one. 5+ years performing at top restaurants and 5-star hotels.",about_p2:"Performed in India, Turkey, China, Saudi Arabia, Russia, Kazakhstan. Custom set for your style.",solo_title:"Solo violin or with DJ",solo_desc:"I perform alone — violin and DJ console, or live violin with backing track.",form_title:"📝 Client form",label_name:"Your name *",label_email:"Email *",label_phone:"Phone *",label_event:"Event type",opt_wedding:"💍 Wedding",opt_corporate:"🏢 Corporate",opt_private:"✨ Private party",label_format:"Select music format",radio_business:"Business (violin lounge & sunset)",radio_romantic:"Romantic (violin, lyrics)",radio_free:"Free (DJ + violin)",label_speakers:"Do you need speakers?",checkbox_speakers:"Yes, sound equipment required",label_message:"Wishes / location / details",btn_send:"✉️ Send request",footer_text:"© ellina_violi — violin & DJ set for any event.",format_business:"🏢 Business (violin lounge & sunset)",format_romantic:"🌸 Romantic (violin, lyrical)",format_free:"🎧 Free (DJ + violin)",country_india:"🇮🇳 India",country_turkey:"🇹🇷 Turkey",country_china:"🇨🇳 China",country_saudi:"🇸🇦 Saudi Arabia",country_russia:"🇷🇺 Russia",country_kazakh:"🇰🇿 Kazakhstan",
+        services_title:"📦 Service packages",service1_title:"Basic",service1_desc:"Violin solo — 60 min",service1_placeholder:"*will be added later",service2_title:"Extended",service2_desc:"DJ + violin, 2 hours",service2_placeholder:"*will be added later",service3_title:"VIP",service3_desc:"Custom set, full support",service3_placeholder:"*will be added later",
+        repertoire_title:"🎵 Repertoire",repertoire_classic:"Classical",repertoire_classic_placeholder:"Tracklist coming soon",repertoire_pop:"Pop / Rock",repertoire_pop_placeholder:"Modern hits cover",repertoire_electro:"Electronic / Lounge",repertoire_electro_placeholder:"Original mixes & remixes",
+        reviews_title:"💬 Client reviews & photos",review1_name:"Anna & Dmitry",review1_text:"«Amazing atmosphere, thank you for a wonderful evening! Photos & video will be added later.»",review2_name:"Ivan, corporate",review2_text:"«True professional, all guests were delighted. Photo report will be added soon.»",review3_name:"Elena, wedding",review3_text:"«Violin + DJ is something incredible! Thank you for the magic. Photos will be added.»"}
+};
+let currentLang='ru';
+function applyLang(l){
+    currentLang=l;
+    document.querySelectorAll('[data-lang]').forEach(el=>{let k=el.getAttribute('data-lang');if(translations[l][k]!==undefined){if(el.tagName==='INPUT'&&el.getAttribute('type')!=='radio'&&el.tagName!=='SELECT')el.placeholder=translations[l][k];else if(el.tagName!=='SELECT')el.innerText=translations[l][k];}});
+    document.querySelectorAll('#eventType option').forEach(opt=>{let k=opt.getAttribute('data-lang');if(k&&translations[l][k])opt.innerText=translations[l][k];});
+    document.querySelectorAll('#formatRadios span').forEach(span=>{let val=span.parentElement.querySelector('input').value;if(val==='business')span.innerText=translations[l].radio_business;if(val==='romantic')span.innerText=translations[l].radio_romantic;if(val==='free')span.innerText=translations[l].radio_free;});
+    const instaLinks=document.querySelectorAll('#instaLink,#footerInsta');instaLinks.forEach(link=>link.style.display=l==='ru'?'none':'inline-block');
+    const mainForm=document.getElementById('mainFormCard'),contractForm=document.getElementById('contractFormCard');
+    if(l==='en'){mainForm.style.display='block';contractForm.style.display='block';}
+    else{mainForm.style.display='block';contractForm.style.display='none';}
+    const bookBtn=document.getElementById('bookEventBtn'),contractBtn=document.getElementById('contractBtn'),watchBtn=document.getElementById('watchVideoBtn');
+    if(l==='en'){bookBtn.innerText="📋 Book event";bookBtn.href="#mainFormCard";contractBtn.style.display="inline-block";contractBtn.innerText="📄 Contract";contractBtn.href="#contractFormCard";watchBtn.innerText="🎬 Watch video";watchBtn.href="#carousel";}
+    else{bookBtn.innerText="📋 Забронировать";bookBtn.href="#form";contractBtn.style.display="none";watchBtn.innerText="🎬 Смотреть видео";watchBtn.href="#carousel";}
+    document.querySelectorAll('.lang-btn').forEach(btn=>btn.classList.toggle('active',btn.getAttribute('data-lang')===l));
+}
+document.querySelectorAll('.lang-btn').forEach(btn=>btn.addEventListener('click',()=>applyLang(btn.getAttribute('data-lang'))));
+applyLang('ru');
+const clientForm=document.getElementById('clientForm'),formFeedback=document.getElementById('formFeedback');
+clientForm.addEventListener('submit',e=>{e.preventDefault();let name=document.getElementById('name').value.trim(),email=document.getElementById('email').value.trim(),phone=document.getElementById('phone').value.trim();if(!name||!email||!phone){formFeedback.innerHTML=currentLang==='ru'?'❌ Заполните имя, email и телефон.':'❌ Fill in name, email, phone.';return;}let speakers=document.getElementById('needSpeakers').checked?'Yes':'No',formatSelected=document.querySelector('input[name="formatRadio"]:checked')?.value;formFeedback.innerHTML=currentLang==='ru'?`✅ ${name}, заявка отправлена! Формат: ${formatSelected}, колонки: ${speakers}. Свяжусь в Telegram @ellina_violi`:`✅ ${name}, request sent! Format: ${formatSelected}, speakers: ${speakers}. I'll contact you.`;clientForm.reset();setTimeout(()=>formFeedback.innerHTML='',6000);});
+const contractFormEl=document.getElementById('contractForm'),contractFeedback=document.getElementById('contractFeedback');
+contractFormEl.addEventListener('submit',e=>{e.preventDefault();let company=document.getElementById('contractCompany').value.trim(),period=document.getElementById('contractPeriod').value.trim(),price=document.getElementById('contractPrice').value.trim(),country=document.getElementById('contractCountry').value.trim(),contact=document.getElementById('contractContact').value.trim();if(!company||!period||!price||!country||!contact){contractFeedback.innerHTML='❌ Please fill required fields: Company, Period, Price, Country, Contact.';return;}contractFeedback.innerHTML=`✅ Thank you! Your contract request has been sent. I will contact you via ${contact}.`;contractFormEl.reset();setTimeout(()=>contractFeedback.innerHTML='',6000);});
+const scrollBtn=document.getElementById('scrollToTopBtn');
+window.addEventListener('scroll',()=>{scrollBtn.classList.toggle('show',window.scrollY>300);});
+scrollBtn.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});});
+updateFormat('business');
+initCarousels();
+</script>
+</body>
+</html>
