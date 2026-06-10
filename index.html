@@ -7,8 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- Подключение CSS библиотеки флагов -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
     <style>
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.0/css/flag-icons.min.css">
         *{margin:0;padding:0;box-sizing:border-box}
         body{background:var(--bg-body);font-family:'Nunito',sans-serif;color:var(--text-color);scroll-behavior:smooth;transition:background .3s,color .3s}
         :root{--bg-body:#fefefe;--card-bg:#fff;--accent-primary:#2c5f8a;--accent-secondary:#b0c4de;--accent-gold:#d4af37;--badge-bg:#e9f0f5;--badge-text:#2c5f8a;--hero-highlight:#eaf4ff;--btn-gradient-start:#2c5f8a;--btn-gradient-end:#5f8db0;--stat-gradient:#2c5f8a;--shadow-card:0 20px 35px -12px rgba(0,0,0,0.06);--border-light:#e2e8f0;--text-color:#1e3a5f}
@@ -46,6 +47,13 @@
         .stat-photo{width:100%;border-radius:28px;margin-bottom:24px;object-fit:cover}
         .countries{display:flex;flex-wrap:wrap;gap:18px;margin:20px 0}
         .country-item{background:var(--badge-bg);padding:6px 18px;border-radius:60px;font-weight:600;font-size:.9rem}
+        /* Стили для флагов и текста */
+        .country-item .fi {
+            margin-right: 6px;
+            font-size: 1.1rem;
+            vertical-align: middle;
+            display: inline-block;
+        }
         .section-title{font-size:2rem;font-weight:800;text-align:center;margin:60px 0 40px;color:var(--accent-primary)}
         .carousel-block{margin-bottom:60px;position:relative}
         .carousel-block .swiper-slide{width:300px;height:auto}
@@ -118,19 +126,12 @@
                 <p data-lang="geo_info" style="margin-top:12px;">📍 Принимаю заказы в Самаре, по России — по договорённости.</p>
             </div>
             <div class="countries">
-    <div class="country-item"><span data-lang="country_india"><i class="fi fi-in"></i> Индия</span></div>
-    <div class="country-item"><span data-lang="country_turkey"><i class="fi fi-tr"></i> Турция</span></div>
-    <div class="country-item"><span data-lang="country_china"><i class="fi fi-cn"></i> Китай</span></div>
-    <div class="country-item"><span data-lang="country_saudi"><i class="fi fi-sa"></i> Саудовская Аравия</span></div>
-    <div class="country-item"><span data-lang="country_russia"><i class="fi fi-ru"></i> Россия</span></div>
-    <div class="country-item"><span data-lang="country_kazakh"><i class="fi fi-kz"></i> Казахстан</span></div>
-</div>
-                <div class="country-item"><span data-lang="country_india">🇮🇳 Индия</span></div>
-                <div class="country-item"><span data-lang="country_turkey">🇹🇷 Турция</span></div>
-                <div class="country-item"><span data-lang="country_china">🇨🇳 Китай</span></div>
-                <div class="country-item"><span data-lang="country_saudi">🇸🇦 Саудовская Аравия</span></div>
-                <div class="country-item"><span data-lang="country_russia">🇷🇺 Россия</span></div>
-                <div class="country-item"><span data-lang="country_kazakh">🇰🇿 Казахстан</span></div>
+                <div class="country-item"><span data-lang="country_india"><i class="fi fi-in"></i> Индия</span></div>
+                <div class="country-item"><span data-lang="country_turkey"><i class="fi fi-tr"></i> Турция</span></div>
+                <div class="country-item"><span data-lang="country_china"><i class="fi fi-cn"></i> Китай</span></div>
+                <div class="country-item"><span data-lang="country_saudi"><i class="fi fi-sa"></i> Саудовская Аравия</span></div>
+                <div class="country-item"><span data-lang="country_russia"><i class="fi fi-ru"></i> Россия</span></div>
+                <div class="country-item"><span data-lang="country_kazakh"><i class="fi fi-kz"></i> Казахстан</span></div>
             </div>
             <div class="button-group" id="heroButtons">
                 <a href="#form" class="btn" id="bookEventBtn">📋 Забронировать</a>
