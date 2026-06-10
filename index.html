@@ -44,10 +44,25 @@
         .stats{flex:0.8;background:rgba(255,255,250,0.7);backdrop-filter:blur(6px);border-radius:48px;padding:28px;border:1px solid var(--border-light)}
         .stat-number{font-size:2rem;font-weight:800;background:linear-gradient(135deg,var(--stat-gradient),var(--accent-gold));-webkit-background-clip:text;background-clip:text;color:transparent}
         .stat-item{margin-bottom:12px}
-        .stat-photo{width:100%;border-radius:28px;margin-bottom:24px;object-fit:cover}
+        /* Новый блок для вертикального фото */
+        .vertical-photo-container {
+            background: #fff;
+            border-radius: 32px;
+            margin-bottom: 24px;
+            padding: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-light);
+        }
+        .vertical-artist-photo {
+            width: 100%;
+            border-radius: 24px;
+            display: block;
+            aspect-ratio: 3 / 4; /* Вертикальное соотношение, можно изменить на 9/16 при желании */
+            object-fit: cover;
+            background: #f0f2f5;
+        }
         .countries{display:flex;flex-wrap:wrap;gap:18px;margin:20px 0}
         .country-item{background:var(--badge-bg);padding:6px 18px;border-radius:60px;font-weight:600;font-size:.9rem}
-        /* Стили для флагов и текста */
         .country-item .fi {
             margin-right: 6px;
             font-size: 1.1rem;
@@ -140,7 +155,10 @@
             </div>
         </div>
         <div class="stats">
-            <img class="stat-photo" src="https://via.placeholder.com/400x300/2c5f8a/ffffff?text=ellina_violi+photo" alt="ellina_violi фото">
+            <!-- Новое белое окно с вертикальным фото -->
+            <div class="vertical-photo-container">
+                <img class="vertical-artist-photo" src="https://via.placeholder.com/600x800/ffffff/2c5f8a?text=Вертикальное+фото+артиста" alt="ellina_violi вертикальное фото">
+            </div>
             <div class="stat-item"><span class="stat-number">50+</span> <span data-lang="stat_weddings">свадеб</span></div>
             <div class="stat-item"><span class="stat-number">20+</span> <span data-lang="stat_rest">ресторанов</span></div>
             <div class="stat-item"><span class="stat-number">5*</span> <span data-lang="stat_hotels">отели</span></div>
