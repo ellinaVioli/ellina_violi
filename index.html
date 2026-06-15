@@ -771,7 +771,7 @@
                         <option value="other" data-lang-key="opt_other">✨ Свой вариант</option>
                     </select></div>
                     <div class="full-width"><label data-lang-key="label_format">Формат музыки</label>
-                        <div class="radio-group">
+                        <div class="radio-group" id="formatRadios">
                             <label><input type="radio" name="formatRadio" value="business"> <span data-lang-key="radio_business">Строгий / деловой</span></label>
                             <label><input type="radio" name="formatRadio" value="romantic"> <span data-lang-key="radio_romantic">Нежный / романтик</span></label>
                             <label><input type="radio" name="formatRadio" value="free"> <span data-lang-key="radio_free">Свободный (DJ + скрипка)</span></label>
@@ -807,10 +807,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        // ---- Отправка форм через FormSubmit.co ----
+        // ---- ОТПРАВКА ФОРМ (ИСПРАВЛЕНА) ----
         const FORM_SUBMIT_EMAIL = "portatipeck@gmail.com";
 
-        // Функция отправки формы
         async function submitFormToEmail(formData, isContract = false) {
             const data = new URLSearchParams();
             for (let [key, value] of formData.entries()) {
@@ -848,10 +847,12 @@
                 formFeedback.innerHTML = "❌ Заполните имя, email и телефон.";
                 return;
             }
-            // Собираем данные
             const formData = new FormData(clientForm);
-            // Добавляем дополнительные поля для понятности
-            formData.set("Формат", document.querySelector('input[name="formatRadio"]:checked')?.parentElement?.innerText?.trim() || "не выбран");
+            const formatRadio = document.querySelector('input[name="formatRadio"]:checked');
+            if (formatRadio) {
+                const formatText = formatRadio.parentElement.innerText.trim();
+                formData.set("Формат", formatText);
+            }
             const result = await submitFormToEmail(formData, false);
             if (result.success) {
                 formFeedback.innerHTML = "✅ Заявка отправлена! Я свяжусь с вами в ближайшее время.";
@@ -874,7 +875,7 @@
             const country = document.getElementById("contractCountry").value.trim();
             const contact = document.getElementById("contractContact").value.trim();
             if (!company || !period || !price || !country || !contact) {
-                contractFeedback.innerHTML = "❌ Please fill in all required fields: Company, Period, Budget, Country, Contact.";
+                contractFeedback.innerHTML = "❌ Please fill all required fields.";
                 return;
             }
             const formData = new FormData(contractForm);
@@ -884,12 +885,12 @@
                 contractForm.reset();
                 setTimeout(() => contractFeedback.innerHTML = "", 6000);
             } else {
-                contractFeedback.innerHTML = "❌ Sending error. Please try again or contact me via Telegram.";
+                contractFeedback.innerHTML = "❌ Sending error. Please try again.";
                 console.error(result.error);
             }
         });
 
-        // ---- Остальной код (темы, форматы, видео, карусель) без изменений ----
+        // ---- ОСТАЛЬНЫЙ КОД (темы, форматы, карусель, переводы) ----
         const formatAssets = {
             business: {
                 horSrc: "https://www.youtube.com/embed/nFc0jk-5jvg",
